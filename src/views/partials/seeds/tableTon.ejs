@@ -1,0 +1,190 @@
+
+<div class="shadow border border-secondary rounded"
+    style=" max-height: 530px;">
+
+    <div class="text-center row justify-content-end p-2">
+
+        <button
+            class="btn btn-toggle rounded border-0 collapsed col-8"
+            data-bs-toggle="collapse" data-bs-target="#waos-collapse"
+            aria-expanded="false">
+
+            <img class="mb-3"
+                src='https://cdn-icons-png.flaticon.com/128/8213/8213522.png'
+                width="24"
+                height="24">
+
+            <b class="display-6 text-light ">Lista de
+                Sector</b>
+
+        </button>
+
+        <div class="col-2 my-2 px-3">
+            <button type="button"
+                class="btn"
+                style="background-color: rgb(76, 175, 80);"
+                data-bs-toggle="modal"
+                data-bs-target="#modCrear">Crear</button>
+            <%- include('./modal.ejs') %>
+        </div>
+    </div>
+
+    <div class="collapse" id="waos-collapse" style>
+        <ul class="btn-toggle-nav list-unstyled fw-normal">
+
+            <div>
+
+                <table class="table table-borderless text-center table-dark "
+                    style="width: 998px; height: 400px; display: grid; overflow-x: hidden; ">
+
+                    <thead class="border border-secondary text-light container"
+                        style=" width: 998px; height: 80px;">
+                        <tr class="row">
+                            <th class="col-1">ID</th>
+                            <th class="col-1">ph Suelo</th>
+                            <th class="col-2">fosforo Suelo</th>
+                            <th class="col-2">nitrogeno Suelo</th>
+                            <th class="col-2">materia Organica Suelo</th>
+                            <th class="col-1">potasio Suelo</th>
+                            <th class="col-2">Acciones</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-light container text-center"
+                        style="width: 998px; max-height: 400px; display: grid; overflow-x: auto;">
+                        <% dataSuelo.forEach(item => { %>
+                        <tr class="row align-items-start">
+                            <td class="col-1">
+                                <%= item.idSuelo %>
+                            </td>
+                            <td class="col-1">
+                                <%= item.phSuelo %>
+                            </td>
+                            <td class="col-2">
+                                <%= item.fosforoSuelo %>
+                            </td>
+                            <td class="col-2">
+                                <%= item.nitrogenoSuelo %> pH
+                            </td>
+                            <td class="col-2">
+                                <%= item.materiaOrganicaSuelo %> kg.
+                            </td>
+                            <td class="col-1">
+                                <%= item.potasioSuelo %> kg.
+                            </td>
+
+                            <td class="col-3">
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <button type="button"
+                                                class="btn"
+                                                style="background-color: rgb(76, 175, 80);"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#del<%- item.idSemilla %>">Borrar</button>
+                                        </div>
+
+                                        <div class="modal fade"
+                                            id="del<%= item.idSemilla %>"
+                                            tabindex="-1"
+                                            aria-labelledby="exampleModalLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div
+                                                    class="modal-content bg-dark">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title"
+                                                            id="exampleModalLabel">Borrar
+                                                            Semilla</h5>
+                                                        <button type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div
+                                                        class="modal-body fs-5">
+                                                        <p>¿Estás seguro de
+                                                            borrar la
+                                                            semilla con ID:
+                                                            <b><%-
+                                                                item.idSemilla%></b>?</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button"
+                                                            class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Cancelar</button>
+                                                        <form
+                                                            action="/home/createseed/delete/<%- item.idSemilla %>"
+                                                            method="post">
+                                                            <button
+                                                                type="submit"
+                                                                class="btn btn-danger">Borrar</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- MODIFICAR -->
+                                        <div class="col-auto">
+                                            <button type="button"
+                                                class="btn"
+                                                style="background-color: rgb(76, 175, 80);"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#mod<%- item.idSemilla %>">Modificar</button>
+                                        </div>
+
+                                        <div class="modal fade"
+                                            id="mod<%= item.idSemilla %>"
+                                            tabindex="-1"
+                                            aria-labelledby="exampleModalLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div
+                                                    class="modal-content bg-dark">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title"
+                                                            id="exampleModalLabel">Borrar
+                                                            Semilla</h5>
+                                                        <button type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div
+                                                        class="modal-body fs-5">
+                                                        <%-
+                                                        include('./form.ejs') %>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button"
+                                                            class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Cancelar</button>
+                                                        <form
+                                                            action="/home/createseed/update/<%- item.idSemilla %>"
+                                                            method="post">
+                                                            <button
+                                                                type="submit"
+                                                                class="btn btn-primary">Modificar</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+
+            </div>
+        </ul>
+
+    </div>
+</div>

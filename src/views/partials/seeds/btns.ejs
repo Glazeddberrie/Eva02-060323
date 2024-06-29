@@ -1,0 +1,62 @@
+<style>
+    .grow img{
+    transition: 1s ease;
+    }
+
+    .grow img:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s ease;
+    }
+
+    .brighten img {
+    -webkit-filter: brightness(50%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    }
+
+    .btnWA :active{
+        filter: drop-shadow(5px 0 0 white) 
+        drop-shadow(0 5px 0 white)
+        drop-shadow(-5px 0 0 white) 
+        drop-shadow(0 -5px 0 white);
+    }
+
+    .brighten img:hover {
+    -webkit-filter: brightness(100%);
+    }
+
+    </style>
+
+<!-- Waos Botones -->
+<div class="shadow border border-secondary rounded px-3"
+    style="width: fit-content;">
+
+    <div class=" text-center m-3">
+        <b class="display-6 text-light m-2">Representacion de
+            sectores</b>
+    </div>
+
+    <div class="p-3">
+
+        <div class="row my-2 grow brighten"><img draggable="false" loading="lazy" decoding="async"
+                class="aligncenter size-full wp-image-424 btn"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Provincias_de_Arica-Parinacota.svg/350px-Provincias_de_Arica-Parinacota.svg.png"
+                alt="" style="width: 80%;"></div>
+
+        <div class="row my-2 grow brighten"><img draggable="false"  loading="lazy" decoding="async"
+                class="aligncenter size-full wp-image-424"
+                src="https://serviciomigraciones.cl/wp-content/uploads/2023/01/Mapa-RM-Santiago-4.gif"
+                alt="" style="width: 80%;"></div>
+
+        <div class="row my-2 grow brighten"><img draggable="false"  loading="lazy" decoding="async"
+                class="aligncenter size-full wp-image-424"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Provincias_de_O%27Higgins.svg/500px-Provincias_de_O%27Higgins.svg.png"
+                alt="" style="width: 80%;"></div>
+
+    </div>
+</div>

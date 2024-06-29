@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/head.ejs') %>
+    <%- include('partials/cdnjs.ejs') %>
+
+    <body class="bg-dark">
+        <div>
+            <%- include('partials/navbar.ejs') %>
+        </div>
+
+        <div class="d-flex justify-content-center flex-wrap">
+            <div class="m-4">
+                <%- include('partials/dirt/table.ejs') %>
+            </div>
+            <div class="m-4">
+                <%- include('partials/dirt/form.ejs') %>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center flex-wrap">
+            <div class="m-4">
+                <%- include('partials/dirt/search.ejs') %>
+            </div>
+            <div class="m-4">
+                <%- include('partials/dirt/delete.ejs') %>
+            </div>
+        </div>
+    </body>
+</html>

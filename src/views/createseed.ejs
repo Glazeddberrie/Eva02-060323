@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/head.ejs') %>
+    <%- include('partials/cdnjs.ejs') %>
+
+    <body class="bg-dark">
+
+        <%- include('partials/navbar.ejs') %>
+
+        <div class="row justify-content-center m-4 py-5">
+            <div class="col-auto mb-2">
+                <%- include('partials/seeds/btns.ejs') %>
+            </div>
+
+            <div class="col-auto mb-2">
+                <%- include('partials/seeds/search.ejs') %>
+                <%- include('partials/seeds/table.ejs') %>
+                <%- include('partials/seeds/tableTon.ejs') %>
+            </div>
+
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+
+    </body>
+
+</html>

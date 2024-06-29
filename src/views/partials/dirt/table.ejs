@@ -1,0 +1,41 @@
+<div class="shadow border border-secondary" style="width: 800px;">
+    <h2 class=" p-3 text-light text-center">Lista de Suelos</h2>
+
+    <table class="table table-borderless">
+        <thead class="text-light " style="background-color: rgb(76,175,80);">
+            <tr>
+                <th>ID</th>
+                <th>pH</th>
+                <th>Fósforo</th>
+                <th>Nitrógeno</th>
+                <th>Materia Orgánica</th>
+                <th>Potasio</th>
+            </tr>
+        </thead>
+        <tbody class="text-light ">
+            <% data.forEach(item=> { %>
+                <tr>
+                    <td>
+                        <%= item.idSuelo %>
+                    </td>
+                    <td>
+                        <%= item.phSuelo %>
+                    </td>
+                    <td>
+                        <%= item.fosforoSuelo %>
+                    </td>
+                    <td>
+                        <%= item.nitrogenoSuelo %>
+                    </td>
+                    <td>
+                        <%= item.materiaOrganicaSuelo %>
+                    </td>
+                    <td>
+                        <%= item.potasioSuelo %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+
+    </table>
+</div>

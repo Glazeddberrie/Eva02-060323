@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/head.ejs') %>
+    <%- include('partials/cdnjs.ejs') %>
+
+    <%- include('partials/navbar.ejs') %>
+
+    <body class="bg-dark m-4 py-5"
+        style="background-image: url(https://i.ytimg.com/vi/28UewMU9XjY/maxresdefault.jpg); background-repeat: no-repeat; background-size: cover;">
+
+        <div class="d-flex justify-content-center">
+            <div class="text-light rounded"
+                style="width: 720px;">
+
+                <form
+                    class="bg-dark form-signin text-center shadow rounded">
+                    <div class="m-1">
+                        <img class="m-4"
+                            src="https://cdn-icons-png.flaticon.com/512/3461/3461963.png"
+                            alt class="logo" width="200" height="180">
+                    </div>
+
+                    <h1 class="text-light m-4">Inicio de sesion</h1>
+
+                    <div class="form-label-group m-4 ">
+                        <label class="my-3" for="inputName">Nombre de
+                            usuario</label>
+                        <input style="background-color: rgb(45, 45, 45);"
+                            type="Name"
+                            id="inputName" class="form-control text-light "
+                            placeholder="Nombre"
+                            required>
+                    </div>
+
+                    <div class="form-label-group m-4 text-light">
+                        <label class="my-3"
+                            for="inputPassword">Contraseña</label>
+                        <input style="background-color: rgb(45, 45, 45);"
+                            type="password"
+                            id="inputPassword" class="form-control text-light"
+                            placeholder="Contraseña" required>
+                    </div>
+
+                    <div class="form-label-group text-center m-4 p-2">
+                        <button class="btn btn-lg btn-block text-light"
+                            style="background-color: rgb(76,175,80);"
+                            type="submit">Iniciar Sesion</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    <div class="py-5">
+        <%- include('partials/footer.ejs') %>
+    </div>
+
+</html>

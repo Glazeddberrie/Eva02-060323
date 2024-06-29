@@ -1,0 +1,29 @@
+<div class="shadow border border-secondary" style="width: 866px;">
+    <h2 class=" p-3 text-light text-center">Lista de usuarios</h2>
+
+    <table class="table table-borderless">
+        <thead class="text-light " style="background-color: rgb(76,175,80);">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Contraseña</th>
+            </tr>
+        </thead>
+        <tbody class="text-light ">
+            <% data.forEach(item => { %>
+            <tr>
+                <td>
+                    <%= item.idUsua %>
+                </td>
+                <td>
+                    <%= item.nombreUsua %>
+                </td>
+                <td>
+                    <%= item.contraUsua %>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+
+    </table>
+</div>

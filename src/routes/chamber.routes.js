@@ -8,8 +8,8 @@ const isNull = (value) => value === null || value === undefined;
 ruta.get('/', (req, res) => {
     try {
         const list = chamberController.getAll()
-            .then((chamber) => {
-                res.send(chamber);
+            .then((list) => {
+                res.send(list);
             })
         console.log(list);
     } catch (error) {
@@ -21,7 +21,7 @@ ruta.get('/', (req, res) => {
 ruta.get('/search/:id', (req, res) => {
     try {
         console.log(req.params.id);
-        var id = parseInt(req.params.id);
+        var id = parseInt(params.id);
         if (isNaN(id)) {
             res.status(500).send("| Error : Solo numeros como busqueda |");
             return;
@@ -60,22 +60,15 @@ ruta.get('/delete/:id', (req, res) => {
 });
 
 //create
-ruta.get('/create/:email/:name/:surname/:rut/:charge/:password/:username', (req, res) => {
+ruta.get('/create/data', (req, res) => {
     try {
-        console.log(req.params.email, req.params.name, req.params.surname, req.params.rut, req.params.charge, req.params.password, req.params.username);
-        var email = req.params.email;
-        var name = req.params.name;
-        var surname = req.params.surname;
-        var rut = req.params.rut;
-        var charge = req.params.charge;
-        var password = req.params.password;
-        var username = req.params.username;
+        console.log(req.params)
 
-        if (isNull(email) || isNull(name) || isNull(surname) || isNull(rut) || isNull(charge) || isNull(password) || isNull(username)) {
+        if (isNull(data)) {
             res.status(500).send("| Error : Datos faltantes y/o incorrectos |");
             return;
         } else {
-            const list = chamberController.create(email, name, surname, rut, charge, password, username)
+            const list = chamberController.create(data)
                 .then((chamber) => {
                     res.send(chamber);
                 })

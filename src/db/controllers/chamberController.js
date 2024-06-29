@@ -1,6 +1,6 @@
 const conn = require('../connection.js');
 
-const TABLA = "chamber";
+const TABLA = "usuario";
 
 function getAll() {
     return new Promise((resolve, reject) => {
@@ -18,9 +18,9 @@ function getOneById(id) {
     });
 }
 
-function create(email, name, surname, rut, charge, password, username) {
+function create(data) {
     return new Promise((resolve, reject) => {
-        conn.query(`INSERT INTO ${TABLA} VALUES (?, ?, ?, ?, ?, ?, ?, ?)`, [null, email, name, surname, rut, charge, password, username], (error, result) => {
+        conn.query(`INSERT INTO ${TABLA} VALUES SET?`, [data], (error, result) => {
             return error ? reject(error) : resolve(result);
         })
     });
